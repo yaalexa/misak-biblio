@@ -2,6 +2,10 @@
         <div>
           <Header />
             <div class="container izquierda">
+             <button type="button" class="btn btn-primary" v-on:click="editar()" >AUTOR</button>
+               <button type="button" class="btn btn-primary" v-on:click="editar()" >EDITORIAL</button>
+                <button type="button" class="btn btn-primary" v-on:click="editar()" >AREA</button>
+                 <button type="button" class="btn btn-primary" v-on:click="editar()" >AGREGAR TIPO DE MATERIAL</button>
                 <form action="" class="form-horizontal">
                     <div class="form-group left">
                        <label for="" class="control-label col-sm-2">Nombre</label>
@@ -133,9 +137,7 @@ export default {
           "author_books_id" : "" ,
           "editorial_id" : "" ,
           "area_id" : "",
-          "material_educational_leves_id" : "" 
-
-         
+          "material_educational_leves_id" : ""         
         }
     }
   },

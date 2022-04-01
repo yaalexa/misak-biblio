@@ -2,8 +2,6 @@
     <div>
         <Header />
             <div class="container  izquierda">
-                
-
                  <form action="" class="form-horizontal">
                     <div class="form-group left">
                        <label for="" class="control-label col-sm-2">Nombre</label>
@@ -49,7 +47,7 @@
                         <div class="col">
                           <label for="" class="control-label col-sm-5">IMAGEN</label>
                           <div class="col-sm-7">
-                             <input type="text" class="form-control" name="img" id="img" v-model="form.img">
+                             <b-form-file accept="image/jpeg, image/png, image/gif" name="img" id="img" v-model="form.img"></b-form-file>
                           </div>
                         </div> 
                     </div>
@@ -132,7 +130,7 @@ export default {
                 "author_books_id" : "" ,
                 "editorial_id" : "" ,
                 "area_id" : "",
-                "material_educational_leves_id" : "" 
+                "material_educational_leves_id" : "",
             }
         }
     },
