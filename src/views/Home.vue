@@ -11,8 +11,8 @@
 
                 <!-- Login Form -->
                 <form v-on:submit.prevent="login">
-                  <input type="text" id="email" class="fadeIn second" name="email" placeholder="Correo" v-model="usuario">
-                  <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password" v-model="password">
+                  <input type="text" id="email" class="fadeIn second" name="login" placeholder="Correo" v-model="email">
+                  <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
                   <input type="submit" class="fadeIn fourth" value="Log In">
                 </form>
 
@@ -31,16 +31,14 @@
 import axios from 'axios';
 
 export default {
-  name: 'Home',
+  name: 'Login',
   components: {
 
   },
   data: function(){
     return {
       email: "",
-      password: "",
-      error: false,
-      error_msg: "",
+      password: ""
     }
   },
   methods:{
@@ -49,10 +47,10 @@ export default {
           "email" : this.email,
           "password": this.password
         };
-        axios.post('localhost:8000/api/login', json)
-        .then( data =>{
-           if(data.data.status == "ok"){
-             localStorage.token = data.data.result.token;
+        axios.post('http://localhost:8000/api/login', json)
+       .then( data =>{
+           if(data.data.status == "1"){
+            // localStorage.token = data.data.result.token;
              this.$router.push('dashboard');
            }else{
              this.error = true;
