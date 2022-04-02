@@ -1,14 +1,18 @@
 <template>
     <div>
-           
+  
                 <Header/>
            
             <div class="container izquierda">
+
+
+                
                 <div class="row">
  
       <div class="col-md-12">
       
         <h1>MATERIAL </h1> 
+        
         
         <input type="text" v-model="buscar" class="form-control" placeholder="Ejemplo: Charmander"/>              
  
@@ -25,8 +29,8 @@
           <div class="card-body">
             <h3 class="card-title mb-3">{{ item.nombre }}</h3>
             <p class="card-text"><strong>Tipo:</strong> {{ item.autor }}</p>
-            <p class="card-text"><strong>Fortaleza:</strong> {{ item.fortaleza }}</p>
-            <p class="card-text"><strong>Debilidad:</strong> {{ item.debilidad }}</p>
+            <p class="card-text"><strong>Fortaleza:</strong> {{ item.categoria }}</p>
+            <p class="card-text"><strong>Debilidad:</strong> {{ item.autor }}</p>
           </div>
         </div>
  

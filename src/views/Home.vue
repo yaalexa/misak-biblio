@@ -1,5 +1,7 @@
 <template>
+ 
   <div class="home">
+  
       <div class="wrapper fadeInDown">
               <div id="formContent">
                 <!-- Tabs Titles -->
@@ -14,8 +16,9 @@
                   <input type="text" id="email" class="fadeIn second" name="login" placeholder="Correo" v-model="email">
                   <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
                   <input type="submit" class="fadeIn fourth" value="Log In">
+                  
                 </form>
-
+                <router-link class="fadeIn fourth" to="/Register">Registrate</router-link>
                 <!-- Remind Passowrd -->
                 <div class="alert alert-danger" role="alert" v-if="error">
                    {{error_msg}}
@@ -23,12 +26,13 @@
 
               </div>
             </div>
-
   </div>
+  
 </template>
 
 <script>
 import axios from 'axios';
+import Bg2 from '@/assets/Screenshot_2.png'
 
 export default {
   name: 'Login',
@@ -38,7 +42,8 @@ export default {
   data: function(){
     return {
       email: "",
-      password: ""
+      password: "",
+      bg2: Bg2,
     }
   },
   methods:{
@@ -64,7 +69,13 @@ export default {
 
 
 <style scoped>
-
+ .img2{
+        width: 100px;
+        height: 100px;
+        background-position: center center;
+        background-size: 100px auto;
+        opacity:70%;
+    }
 
 /* BASIC */
 
@@ -75,6 +86,13 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
+	 background-image:url("@/assets/Screenshot_2.png");
+	 background-repeat:no-repeat;
+	 background-size:cover;
+	 width:100%;
+	 height:100vh;
+	 overflow:auto;
+    filter: alpha(opacity=50);
 }
 
 a {
@@ -111,9 +129,10 @@ h2 {
 #formContent {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background: #fff;
+  background-image:url("@/assets/fondo.png") ;
+   opacity: 0.8;
   padding: 30px;
-  width: 90%;
+  width: 100%;
   max-width: 450px;
   position: relative;
   padding: 0px;

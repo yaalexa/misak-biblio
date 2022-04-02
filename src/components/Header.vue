@@ -22,7 +22,7 @@
                   <a href="#"><i class="fa fa-gift fa-lg"></i> Autores <span class="arrow"></span></a>
                 </li>
               
-
+        </ul>  
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
                   <a href="#"><i class="fa fa-globe fa-lg"></i> Tipo Material <span class="arrow"></span></a>
@@ -52,7 +52,7 @@
                 </ul>
 
 
-            </ul>
+           
      </div>
 </div>
     
