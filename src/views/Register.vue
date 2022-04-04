@@ -4,7 +4,7 @@
      <header class="heading"> REGISTRO</header>
 	
 	<div class="row ">
-	
+	<div class="cont">
          <div class="col-sm-12">
              <div class="row">
 			     <div class="col-xs-4">
@@ -46,7 +46,7 @@
           </div>
 		  </div>
 		  
-    
+    </div>
         
 	 </div>	 
 		 		 
@@ -58,9 +58,7 @@
 body{
 font-family: "Poppins", sans-serif;
   height: 100vh;
-	 background-image:url("@/assets/Screenshot_2.png");
-	 background-repeat:no-repeat;
-	 background-size:cover;
+	 
 	 width:100%;
 	 height:100vh;
 	 overflow:auto;
@@ -70,18 +68,25 @@ font-family: "Poppins", sans-serif;
 /*-----for border----*/
 .container{
 	font-family:Roboto,sans-serif;
-	  background-image:url("@/assets/fondo.png") ;
-     border-style: 1px solid grey;
+
      margin: 0 auto;
-     text-align: center;
-     opacity: 0.8;
-     margin-top: 67px;
-   box-shadow: 2px 5px 5px 0px #eee;
+     
+     
+}
+.cont{
+     background-image:url("@/assets/fondo.png") ;
+    border-style: 1px solid grey;
+    opacity: 0.8;
+    text-align: center;
+    box-shadow: 2px 5px 5px 0px #eee;
+    margin-top: 67px;
      max-width: 300px;
      padding-top: 10px;
      height: 363px;
      margin-top: 166px;
-}
+     background-repeat:no-repeat;
+	 background-size:cover;
+ }   
 /*--- for label of first and last name---*/
 .lastname{
 	 margin-left: 1px;

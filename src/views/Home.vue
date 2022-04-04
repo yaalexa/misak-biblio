@@ -1,9 +1,9 @@
 <template>
- 
+ <div class="general">
   <div class="home">
   
       <div class="wrapper fadeInDown">
-              <div id="formContent">
+              <div id="formContent" class="login" >
                 <!-- Tabs Titles -->
 
                 <!-- Icon -->
@@ -12,7 +12,7 @@
                 </div>
 
                 <!-- Login Form -->
-                <form v-on:submit.prevent="login">
+                <form  v-on:submit.prevent="login">
                   <input type="text" id="email" class="fadeIn second" name="login" placeholder="Correo" v-model="email">
                   <input type="text" id="password" class="fadeIn third" name="login" placeholder="Password" v-model="password">
                   <input type="submit" class="fadeIn fourth" value="Log In">
@@ -27,12 +27,11 @@
               </div>
             </div>
   </div>
-  
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Bg2 from '@/assets/Screenshot_2.png'
 
 export default {
   name: 'Login',
@@ -43,7 +42,7 @@ export default {
     return {
       email: "",
       password: "",
-      bg2: Bg2,
+     
     }
   },
   methods:{
@@ -83,16 +82,20 @@ html {
   background-color: #56baed;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
+.general{
+ background-image:url("@/assets/Screenshot_2.png");
   height: 100vh;
-	 background-image:url("@/assets/Screenshot_2.png");
 	 background-repeat:no-repeat;
 	 background-size:cover;
 	 width:100%;
 	 height:100vh;
 	 overflow:auto;
     filter: alpha(opacity=50);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
 }
 
 a {
@@ -126,10 +129,10 @@ h2 {
   padding: 20px;
 }
 
-#formContent {
+.login {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
-  background-image:url("@/assets/fondo.png") ;
+ background-image:url("@/assets/fondo.png") ;
    opacity: 0.8;
   padding: 30px;
   width: 100%;
