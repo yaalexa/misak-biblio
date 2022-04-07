@@ -1,10 +1,11 @@
 <template>
+  <div class="new_conten">
  <div class="container">
-
+  
      <header class="heading"> REGISTRO</header>
 	
 	<div class="row ">
-	<div class="cont">
+	
          <div class="col-sm-12">
              <div class="row">
 			     <div class="col-xs-4">
@@ -46,48 +47,50 @@
           </div>
 		  </div>
 		  
-    </div>
+      </div>
         
 	 </div>	 
 		 		 
 		 
 </div>
 </template>
-<style>
-
+<style scoped>
+.container {
+   background-image:url("@/assets/fondo.png") ;
+    border-style: 1px solid grey;
+    opacity: 0.8;
+    text-align: center;
+    box-shadow: 2px 5px 5px 0px #eee;
+     max-width: 700px;
+     padding-top: 10px;
+     height: 500px;
+     margin-top: 50px;
+     background-repeat:no-repeat;
+	 background-size:cover;
+}
 body{
 font-family: "Poppins", sans-serif;
   height: 100vh;
-	 
 	 width:100%;
 	 height:100vh;
 	 overflow:auto;
    
 }
 
-/*-----for border----*/
-.container{
-	font-family:Roboto,sans-serif;
 
-     margin: 0 auto;
-     
+.new_conten{
+	 background-image:url("@/assets/Screenshot_2.png");
+  height: 100vh;
+	 background-repeat:no-repeat;
+	 background-size:cover;
+	 width:100%;
+	 height:100vh;
+	 overflow:auto;
+    filter: alpha(opacity=50);
      
 }
-.cont{
-     background-image:url("@/assets/fondo.png") ;
-    border-style: 1px solid grey;
-    opacity: 0.8;
-    text-align: center;
-    box-shadow: 2px 5px 5px 0px #eee;
-    margin-top: 67px;
-     max-width: 300px;
-     padding-top: 10px;
-     height: 363px;
-     margin-top: 166px;
-     background-repeat:no-repeat;
-	 background-size:cover;
- }   
-/*--- for label of first and last name---*/
+  
+
 .lastname{
 	 margin-left: 1px;
      font-family: sans-serif;
@@ -115,13 +118,11 @@ font-family: "Poppins", sans-serif;
 	 color:#F96;
 	 padding-top:10px;
 }
-/*-------for email----------*/
-  /*------label----*/
+
 #email{
 	  margin-top: 5px;
 }
-/*-----------for Password--------*/
-     /*-------label-----*/
+
 .mail{
 	 margin-left: 44px;
      font-family: sans-serif;

@@ -1,6 +1,7 @@
 <template>
     <div>
         <Header />
+
             <div class="container  izquierda">
                  <form action="" class="form-horizontal">
                     <div class="form-group left">
@@ -47,7 +48,7 @@
                         <div class="col">
                           <label for="" class="control-label col-sm-5">IMAGEN</label>
                           <div class="col-sm-7">
-                             <b-form-file accept="image/jpeg, image/png, image/gif" name="img" id="img" v-model="form.img"></b-form-file>
+                             <input type="text" class="form-control"  name="img" id="img" v-model="form.img">
                           </div>
                         </div> 
                     </div>
@@ -125,12 +126,9 @@ export default {
                 "priority":"",
                 "pdf" :"",
                 "img" : "",
-                "material_users_id" : "",
                 "type_material_id" : "",
-                "author_books_id" : "" ,
                 "editorial_id" : "" ,
-                "area_id" : "",
-                "material_educational_leves_id" : "",
+                "area_id" : ""
             }
         }
     },
@@ -141,7 +139,7 @@ export default {
     methods:{
         guardar(){
             
-            axios.post("http://127.0.0.1:8000/api/material",this.form)
+            axios.post("http://127.0.0.1:8000/api/materials",this.form)
             .then(data =>{
                 console.log(data);
                 this.makeToast("Hecho","materila creado","success");
