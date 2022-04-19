@@ -11,6 +11,11 @@ import MostrarMaterial from'../views/material/Mostrar.vue';
 import CrearMaterial from '../views/material/Crear.vue';
 import EditarMaterial from'../views/material/Editar.vue';
 
+import CrearEditorial from '../views/Editorial/Crear.vue';
+import EditarEditorial from '../views/Editorial/Editar';
+import MostrarEditorial from '../views/Editorial/Mostrar.vue';
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -53,6 +58,21 @@ const routes = [
     name: 'editarMaterial',
     path: '/editar/:id',
     component: EditarMaterial
+},
+{
+    name: 'CrearEditorial',
+    path: '/CrearEdit',
+    component: CrearEditorial
+},
+{
+  name: 'EditarEditorial',
+  path: '/Editar/:id',
+  component: EditarEditorial
+},
+{
+  name: 'MostrarEditorial',
+  path: '/Editorial',
+  component: MostrarEditorial
 }
 ]
 

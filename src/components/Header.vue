@@ -35,7 +35,7 @@
 
 
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> Editorial <span class="arrow"></span></a>
+                <router-link exact-active-class="active" to="/Editorial" class="nav-link" aria-current="page">Editorial</router-link>
                 </li>
                 <ul class="sub-menu collapse" id="new">
                   <li>New New 1</li>
