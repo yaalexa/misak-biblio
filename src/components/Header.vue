@@ -13,6 +13,11 @@
                   <router-link exact-active-class="active" to="dashboard" class="nav-link" aria-current="page">HOME</router-link>
                 </li>
 
+                <!--usuario-->
+                  <li  data-toggle="collapse" data-target="#users" class="collapsed active">
+                  <router-link exact-active-class="active" to="/usuarios" class="nav-link" aria-current="page">USUARIOS</router-link>
+                </li>
+
                  <li  data-toggle="collapse" data-target="#products" class="collapsed">
                   <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">Material</router-link>
                 </li>

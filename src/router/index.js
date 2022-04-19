@@ -9,11 +9,31 @@ import Nuevo from '../views/Nuevo.vue';
  // componentes para tipo de material
 import MostrarMaterial from'../views/material/Mostrar.vue';
 import CrearMaterial from '../views/material/Crear.vue';
-import EditarMaterial from'../views/material/Editar.vue';
+import EditarMaterial from '../views/material/Editar.vue';
+
+//para usuarios
+import Usuarios from'../views/usuarios/usuarios.vue';
+import Unuevo from'../views/usuarios/unuevo.vue';
+import ActualizarUsuarios from'../views/usuarios/actualizarUsuario.vue';
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path:'/usuarios',
+    name:'/usuarios',
+    component: Usuarios
+  },
+  {
+    path:'/actualizarusuarios',
+    name:'/actualizarusuarios',
+    component: ActualizarUsuarios
+  },
+  {
+    path:'/unuevo',
+    name:'/unuevo',
+    component: Unuevo
+  },
   {
     path: '/',
     name: 'Home',
