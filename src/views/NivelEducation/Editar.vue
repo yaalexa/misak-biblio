@@ -11,9 +11,9 @@
             <form @submit.prevent="actualizar">
                 <div>
                     <section>
-                        <h1>Editar Editorial</h1>
-                        <label for="">name: </label>
-                        <input type="text" v-model="editorial.name">
+                        <h1>Editar Nivel Educativo</h1>
+                        <label for="">Nivel Educativo: </label>
+                        <input type="text" v-model="NivelEducativo.name">
                         <br><br>
                     </section>
                 </div>   
@@ -34,10 +34,10 @@ import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 export default {
-    name:"EditarEditorial",
+    name:"EditarNivelEducativo",
     data(){
         return {
-            editorial:{
+            NivelEducativo:{
                 name:""
             }
         }
@@ -47,21 +47,21 @@ export default {
       //  Footer
     },
     mounted(){
-        this.mostrarEditorial()
+        this.mostrarNivelEducativo()
     },
     methods:{
-        async mostrarEditorial(){
-            await this.axios.get(`http://127.0.0.1:8000/api/editorials/${this.$route.params.id}`).then(response=>{
+        async mostrarNivelEducativo(){
+            await this.axios.get(`http://127.0.0.1:8000/api/educational_levels/${this.$route.params.id}`).then(response=>{
                 const { name} = response.data
-                this.editorial.name = name
+                this.NivelEducativo.name = name
               
             }).catch(error=>{
                 console.log(error)
             })
         },
         async actualizar(){
-            await this.axios.put(`http://127.0.0.1:8000/api/editorials/${this.$route.params.id}`,this.editorial).then(response=>{
-                this.$router.push({name:"MostrarEditorial"})
+            await this.axios.put(`http://127.0.0.1:8000/api/educational_levels/${this.$route.params.id}`,this.NivelEducativo).then(response=>{
+                this.$router.push({name:"MostrarNivelEducativo"})
             }).catch(error=>{
                 console.log(error)
             })

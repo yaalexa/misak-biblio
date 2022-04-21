@@ -42,8 +42,8 @@
                   <li>New New 2</li>
                   <li>New New 3</li>
                 </ul>
-                  <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> Nivel Educativo <span class="arrow"></span></a>
+                   <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/NivelEducativo" class="nav-link" aria-current="page">Nivel Educativo</router-link>
                 </li>
                 <ul class="sub-menu collapse" id="new">
                   <li>New New 1</li>
