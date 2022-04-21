@@ -70,6 +70,6 @@ export default {
   background-position: center center;
   background-size: 100px auto;
   margin-left: 10em;
-  margin-top: 15em;
+  margin-top: 18em;
 }
 </style>

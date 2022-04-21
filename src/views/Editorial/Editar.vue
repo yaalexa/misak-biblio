@@ -13,7 +13,7 @@
                     <section>
                         <h1>Edita Editorial</h1>
                         <label for="">name: </label>
-                        <input type="text" v-model="editorial.name">
+                        <input type="text" v-model="editorial.name" id="name" name="name">
                         <br><br>
                     </section>
                 </div>   
@@ -46,8 +46,14 @@ export default {
         Header,
       //  Footer
     },
-    mounted(){
-        this.mostrarEditorial()
+    mounted:function(){
+        this.form.editorialid = this.$route.params.id;
+        axios.get("http://localhost:8000/api/editorials?id="+ this.form.editorialid)
+        .then( datos =>{
+            this.form.name = datos.data[0].name;
+        })
+
+
     },
     methods:{
         async mostrarEditorial(){

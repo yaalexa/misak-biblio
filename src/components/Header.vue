@@ -45,9 +45,9 @@
   background-color: #2e353d;
   position: fixed;
   top: 0px;
-  width: 28%;
-  max-width:28%;
-  min-width: 28%;
+  width: 20%;
+  max-width:20%;
+  min-width: 20%;
   min-height:100%;
   height: 100%;
   color: #e1ffff;
