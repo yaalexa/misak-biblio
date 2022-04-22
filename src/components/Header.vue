@@ -1,5 +1,5 @@
 <template>
-
+<div class="Hight">
 <div class="nav-side-menu">
     <div class="brand"> 
        <img src="@/assets/logo.png" id="icon" alt="User Icon" />
@@ -7,46 +7,118 @@
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
+  
             <ul id="menu-content" class="menu-content collapse out">
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <router-link exact-active-class="active" to="/welcome" class="nav-link" aria-current="page">HOME</router-link>
-                </li>
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <router-link exact-active-class="active" to="/Library" class="nav-link" aria-current="page">BIBLIOTECA</router-link>
-                </li>
-                 <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">MATERIAL</router-link>
+               <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <router-link exact-active-class="active" to="dashboard" class="nav-link" aria-current="page">HOME</router-link>
                 </li>
 
                  <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> AUTORES <span class="arrow"></span></a>
+                  <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">Material</router-link>
                 </li>
+              
+
+                 <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> Autores <span class="arrow"></span></a>
+                </li>
+              
+        </ul>  
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> TIPO DE MATERIAL <span class="arrow"></span></a>
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> Tipo Material <span class="arrow"></span></a>
                 </li>  
+                <ul class="sub-menu collapse" id="service">
+                  <li>New Service 1</li>
+                  <li>New Service 2</li>
+                  <li>New Service 3</li>
+                </ul>
+
 
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <router-link exact-active-class="active" to="/Editorial" class="nav-link" aria-current="page">EDITORIAL</router-link>
+                  <a href="#"><i class="fa fa-car fa-lg"></i> Editorial <span class="arrow"></span></a>
                 </li>
                 
-                   <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <router-link exact-active-class="active" to="/NivelEducativo" class="nav-link" aria-current="page">Nivel Educativo</router-link>
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <router-link exact-active-class="active" to="/mostrar" class="nav-link" aria-current="page"> Roles </router-link>
                 </li>
+                
+                <ul class="sub-menu collapse" id="new">
+                  <li>New New 1</li>
+                  <li>New New 2</li>
+                  <li>New New 3</li>
+                </ul>
+                  <li data-toggle="collapse" data-target="#new" class="collapsed">
+                      <a href="#"><i class="fa fa-car fa-lg"></i> Nivel Educativo <span class="arrow"></span></a>
+                  </li>
+                <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                  <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">Información del usuario</router-link>
+                </li>
+   <fieldset >
+      <div class="contenedor"> 
+        <table>
+            <thead>
+                  <tr>
+                      <td class="td">Tipo Usuario: {{}} </td>
+                  </tr>
+                  <tr>
+                     <td> <img src="@/assets/mifoto.jpg" ></td> 
+                  </tr>
+                 
+            </thead>
+            <tbody>
+                  <td class="td"> Nombre: {{}} </td>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7" class="centro">Servicio Nacional de Aprendizaje SENA</td>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+    </fieldset>
+    <input type=button name=cerar value=CerrarSesion onclick="window.close()">
 
-                <!--usuario-->
-                  <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <router-link exact-active-class="active" to="/usuarios" class="nav-link" aria-current="page">USUARIOS</router-link>
-                </li>
-                 <!--reportes-->
-                  <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <router-link exact-active-class="active" to="/reportes" class="nav-link" aria-current="page">REPORTES</router-link>
-                </li>
-                 </ul>  
+
+                <ul class="sub-menu collapse" id="new">
+                  <li>New New 1</li>
+                  <li>New New 2</li>
+                  <li>New New 3</li>
+                </ul>
+                
+                
+
+
+           
      </div>
 </div>
-    
+</div>
 </template>
+
+<script>
+    
+        /* let app = new Vue({
+            el: '#app',
+            data: function() {
+             mensaje: '',
+             info:[]
+            },
+            mounted () {
+                axios
+                .get('http://127.0.0.1:8000/api/users')
+                .then(response => (this.info = response))
+                console.log(this.info)
+            }  ,
+            methods : {
+              logout()
+
+            } 
+
+         }); */
+
+    </script>
+
+
+
 
 <style>
 .nav-side-menu {
@@ -57,14 +129,9 @@
   background-color: #2e353d;
   position: fixed;
   top: 0px;
-  width: 20%;
-  max-width:20%;
-  min-width: 20%;
-  min-height:100%;
+  width: 300px;
   height: 100%;
   color: #e1ffff;
-  background-image:url("@/assets/fondo.png") ;
-   opacity: 0.7;
 }
 .nav-side-menu .brand {
   background-color: #23282e;
@@ -72,8 +139,6 @@
   display: block;
   text-align: center;
   font-size: 14px;
-  background-image:url("@/assets/fondo.png") ;
-   opacity: 0.7;
 }
 .nav-side-menu .toggle-btn {
   display: none;
@@ -189,11 +254,47 @@ body {
   margin: 0px;
   padding: 0px;
 }
-#icon {
-  width:50%;
-  position: relative;
-  background-position: center center;
-  background-size: 100px auto;
+
+.contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 5px;
   
+  border-style: double;
+  border-color: #ff0000;
+
 }
+
+fieldset{ 
+  background-color: #2e353d;
+  /* border-width: 15px;
+  
+  border-style: double;
+  border-color: blueviolet;
+  text-align: center;
+  */ 
+}
+
+table {
+  flex-direction: center;
+  border-collapse: separate;
+  align-items: center;
+  justify-content: center;
+
+}
+.td {
+  border: 1px solid #ff0000;
+  background-color:#2e353d;
+  margin: 0 auto
+}
+td {
+  border: 1px double green;
+  background-color: #2e353d;
+}
+.centro {
+  text-align: center;
+  background-color:#2e353d;
+}
+
 </style>

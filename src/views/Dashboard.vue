@@ -2,7 +2,7 @@
     <div>
            
                 <Header/>
-            <vue-jasper  :url="jasperUrl" :username="jasperUsername" :password="jasperPassword"/>
+           
             <div class="container izquierda">
                 <div class="row">
  
@@ -126,11 +126,7 @@ export default {
 <style  scoped>
     .izquierda{
         text-align: left;
-        width: 70%;
-        position: center;
-        overflow: auto;
-        height:100vh;
-        margin-left: 20rem;
+        width: 50%;
     }
    
 </style>

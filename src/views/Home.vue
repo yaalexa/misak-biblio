@@ -1,5 +1,6 @@
 <template>
  <div class="general">
+  
   <div class="home">
   
       <div class="wrapper fadeInDown">
@@ -7,6 +8,7 @@
                 <!-- Tabs Titles -->
 
                 <!-- Icon -->
+                
                 <div class="fadeIn first">
                   <img src="@/assets/logo.png" id="icon" alt="User Icon" />
                 </div>
@@ -51,6 +53,7 @@ export default {
           "email" : this.email,
           "password": this.password
         };
+        
         axios.post('http://localhost:8000/api/login', json)
        .then( data =>{
            if(data.data.status == "1"){

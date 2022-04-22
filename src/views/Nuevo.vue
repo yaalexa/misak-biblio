@@ -169,8 +169,8 @@ export default {
 .left{
     text-align:  left;
 }
-   .izquierda{
+.izquierda{
         text-align: left;
         width: 50%;
-    }
+}
 </style>

@@ -8,6 +8,9 @@
 	 <form action="" v-on:submit.prevent="register">
 
 	<div class="row ">
+	
+
+		 
 		 
          <div class="col-sm-12">
 		     <div class="row">
