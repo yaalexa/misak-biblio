@@ -10,6 +10,7 @@ import Nuevo from '../views/Nuevo.vue';
 import MostrarMaterial from'../views/material/Mostrar.vue';
 import CrearMaterial from '../views/material/Crear.vue';
 import EditarMaterial from'../views/material/Editar.vue';
+import Usuario from'../views/Usuario.vue';
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,11 @@ const routes = [
     name: 'editarMaterial',
     path: '/editar/:id',
     component: EditarMaterial
+},
+{
+  path: '/Usuario',
+  name: 'Usuario',
+  component: Usuario
 }
 ]
 

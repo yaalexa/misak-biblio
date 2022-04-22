@@ -47,12 +47,9 @@
                                     <th>priority</th>
                                     <th>pdf</th>
                                     <th>img</th>
-                                    <th>material_users_id</th>
                                     <th>type_material_id</th>
-                                    <th>author_books_id</th>
                                     <th>editorial_id</th>
                                     <th>area_id</th>
-                                    <th>material_educational_leves_id</th>
                                     <th>Acciones</th>
                     </tr>
                 </thead>
@@ -67,12 +64,9 @@
                                     <td>{{ material.priority }}</td>
                                     <td>{{ material.pdf }}</td>
                                     <td>{{ material.img }}</td>
-                                    <td>{{ material.material_users_id }}</td>
                                     <td>{{ material.type_material_id }}</td>
-                                    <td>{{ material.author_books_id }}</td>
                                     <td>{{ material.editorial_id }}</td>
                                     <td>{{ material.area_id }}</td>
-                                    <td>{{ material.material_educational_leves_id }}</td>
                                      <td>
                                     <!--Botón modificar, que carga los datos del formulario con la tarea seleccionada-->
                                     <button class="btn btn-primary btn-sm" @click="editar(material.id)">+</button>
