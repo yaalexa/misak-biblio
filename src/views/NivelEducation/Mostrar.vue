@@ -7,7 +7,7 @@
         </div>
         <div class="cara2">
             <section>
-                <h1>Nivel Edcuativo</h1> 
+                <h1>Nivel Educativo</h1> 
                  <router-link :to='{name:"CrearNivelEducativo"}' class="btn btn-success">Crear Nivel Educativo</router-link>
                     <table class="table">
                         <thead>

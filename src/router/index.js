@@ -19,6 +19,11 @@ import CrearNivelEdicativo from '../views/NivelEducation/Crear.vue';
 import EditarNivelEdicativo from '../views/NivelEducation/Editar';
 import MostrarNivelEdicativo from '../views/NivelEducation/Mostrar.vue';
 
+import Reportes from '../views/reportes/vista.vue';
+import ReportesDescargas from '../views/reportes/Descargas.vue';
+import ReportesVisualizacion from '../views/reportes/Visualizacion.vue';
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -91,6 +96,21 @@ const routes = [
   name: 'MostrarNivelEducativo',
   path: '/NivelEducativo',
   component: MostrarNivelEdicativo
+},
+{
+  name: 'VistaReporte',
+  path: '/vistaReporte',
+  component: Reportes
+},
+{
+  name: 'Descargas',
+  path: '/Descargas',
+  component: ReportesDescargas
+},
+{
+  name: 'Visualizacion',
+  path: '/Visualizacion',
+  component: ReportesVisualizacion
 }
 ]
 

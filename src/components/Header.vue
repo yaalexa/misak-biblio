@@ -50,6 +50,9 @@
                   <li>New New 2</li>
                   <li>New New 3</li>
                 </ul>
+                 <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/vistaReporte" class="nav-link" aria-current="page">Reportes</router-link>
+                </li>
 
 
            
