@@ -19,6 +19,14 @@ import Usuarios from'../views/usuarios/usuarios.vue';
 import Unuevo from'../views/usuarios/unuevo.vue';
 import ActualizarUsuarios from'../views/usuarios/actualizarUsuario.vue';
 
+//para nivel educativo
+
+import CrearNivelEdicativo from '../views/NivelEducation/Crear.vue';
+import EditarNivelEdicativo from '../views/NivelEducation/Editar.vue';
+import MostrarNivelEdicativo from '../views/NivelEducation/Mostrar.vue';
+
+import Library from '../views/Library.vue';
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -46,6 +54,11 @@ const routes = [
     path: '/welcome',
     name: 'welcome',
     component: welcome
+  },
+  {
+    path: '/Library',
+    name: 'Library',
+    component: Library
   },
   {
     path: '/Register',
@@ -82,6 +95,21 @@ component: EditarEditorial
 name: 'MostrarEditorial',
 path: '/Editorial',
 component: MostrarEditorial
+},
+{
+  name: 'CrearNivelEducativo',
+  path: '/CrearNivelEducativo',
+  component: CrearNivelEdicativo
+},
+{
+name: 'EditarNivelEducativo',
+path: '/Editar/:id',
+component: EditarNivelEdicativo
+},
+{
+name: 'MostrarNivelEducativo',
+path: '/NivelEducativo',
+component: MostrarNivelEdicativo
 }
 ]
 

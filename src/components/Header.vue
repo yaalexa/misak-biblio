@@ -11,6 +11,9 @@
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <router-link exact-active-class="active" to="/welcome" class="nav-link" aria-current="page">HOME</router-link>
                 </li>
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/Library" class="nav-link" aria-current="page">BIBLIOTECA</router-link>
+                </li>
                  <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">MATERIAL</router-link>
                 </li>
@@ -27,8 +30,17 @@
                 <router-link exact-active-class="active" to="/Editorial" class="nav-link" aria-current="page">EDITORIAL</router-link>
                 </li>
                 
+                   <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/NivelEducativo" class="nav-link" aria-current="page">Nivel Educativo</router-link>
+                </li>
+
+                <!--usuario-->
                   <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> NIVEL EDUCATIVO <span class="arrow"></span></a>
+                  <router-link exact-active-class="active" to="/usuarios" class="nav-link" aria-current="page">USUARIOS</router-link>
+                </li>
+                 <!--reportes-->
+                  <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <router-link exact-active-class="active" to="/reportes" class="nav-link" aria-current="page">REPORTES</router-link>
                 </li>
                  </ul>  
      </div>
