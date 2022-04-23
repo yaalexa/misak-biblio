@@ -1,13 +1,18 @@
 <template>
-  <div class="new_conten">
+<div>
+    <Header/>
+<div class="new_conten">
  <div class="container">
   
-     <header class="heading"> REGISTRO</header>
+     <header class="heading"> REGISTRO DE NUEVO USUARIO</header>
 	
 	<div class="row ">
 	 <form action="" v-on:submit.prevent="register">
 
 	<div class="row ">
+	
+
+		 
 		 
          <div class="col-sm-12">
 		     <div class="row">
@@ -98,7 +103,7 @@
           </div>
 		  </div>
             <div>
-            <button type="button" class="btn btn-primary" v-on:click="register()">Registrarme</button>            
+            <button type="button" class="btn btn-primary" v-on:click="register()">Registrar nuevo usuario</button>            
 	 </div> 
       </div>	 
       </form>
@@ -109,9 +114,68 @@
 		 		 
 		 
 </div>
+</div>
 </template>
+<script>
+import Header from '@/components/Header.vue'
+//import Footer from '@/components/Footer.vue'
+import axios from 'axios';
+export default {
+    name:"Nuevo",
+    components:{
+        Header
+    },
+
+    data: function(){
+    return {
+         name:"",
+         full_name:"",
+         email:"",
+         password:"",
+         password_confirmation:"",
+         document_type:"", 
+         document_number:"",
+         certificate_misak:"",
+         rols_id:2
+    }
+  },
+  methods:{
+    register(){
+        let json = {
+             "name":this.name,
+             "full_name":this.full_name,
+             "email" : this.email,
+             "password": this.password,
+             "password_confirmation":this.password_confirmation,
+             "document_type":this.document_type,
+             "document_number":this.document_number,
+             "certificate_misak":this.certificate_misak,
+             "rols_id":2
+        };
+        axios.post('http://localhost:8000/api/register', json)
+       .then( data =>{
+           if(data.data.status == "1"){
+            // localStorage.token = data.data.result.token;
+             this.$router.push('/usuarios');
+           }else{
+             this.error = true;
+             this.error_msg = data.data.result.error_msg;
+           }
+        })
+    }
+  }
+
+}
+</script>
 <style scoped>
-.container {
+.left{
+    text-align:  left;
+}
+   .izquierda{
+        text-align: left;
+        width: 50%;
+    }
+    .container {
    background-image:url("@/assets/fondo.png") ;
     border-style: 1px solid grey;
     opacity: 0.8;
@@ -241,51 +305,4 @@ font-family: "Poppins", sans-serif;
 	transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
 	
 }	 
-	  
 </style>
-<script>
-import axios from 'axios';
-export default {
-  name: 'register',
-  components: {
-  },
-  data: function(){
-    return {
-         name:"",
-         full_name:"",
-         email:"",
-         password:"",
-         password_confirmation:"",
-         document_type:"", 
-         document_number:"",
-         certificate_misak:"",
-         rols_id:2
-    }
-  },
-  methods:{
-    register(){
-        let json = {
-             "name":this.name,
-             "full_name":this.full_name,
-             "email" : this.email,
-             "password": this.password,
-             "password_confirmation":this.password_confirmation,
-             "document_type":this.document_type,
-             "document_number":this.document_number,
-             "certificate_misak":this.certificate_misak,
-             "rols_id":2
-        };
-        axios.post('http://localhost:8000/api/register', json)
-       .then( data =>{
-           if(data.data.status == "1"){
-            // localStorage.token = data.data.result.token;
-             this.$router.push('/');
-           }else{
-             this.error = true;
-             this.error_msg = data.data.result.error_msg;
-           }
-        })
-    }
-  }
-}
-</script>

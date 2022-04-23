@@ -7,52 +7,42 @@
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
-  
             <ul id="menu-content" class="menu-content collapse out">
-               <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <router-link exact-active-class="active" to="dashboard" class="nav-link" aria-current="page">HOME</router-link>
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/welcome" class="nav-link" aria-current="page">HOME</router-link>
+                </li>
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/Library" class="nav-link" aria-current="page">BIBLIOTECA</router-link>
+                </li>
+                 <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">MATERIAL</router-link>
                 </li>
 
                  <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">Material</router-link>
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> AUTORES <span class="arrow"></span></a>
                 </li>
-              
-
-                 <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> Autores <span class="arrow"></span></a>
-                </li>
-              
-        </ul>  
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> Tipo Material <span class="arrow"></span></a>
+                  <a href="#"><i class="fa fa-globe fa-lg"></i> TIPO DE MATERIAL <span class="arrow"></span></a>
                 </li>  
-                <ul class="sub-menu collapse" id="service">
-                  <li>New Service 1</li>
-                  <li>New Service 2</li>
-                  <li>New Service 3</li>
-                </ul>
-
 
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> Editorial <span class="arrow"></span></a>
+                <router-link exact-active-class="active" to="/Editorial" class="nav-link" aria-current="page">EDITORIAL</router-link>
                 </li>
-                <ul class="sub-menu collapse" id="new">
-                  <li>New New 1</li>
-                  <li>New New 2</li>
-                  <li>New New 3</li>
-                </ul>
+                
+                   <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/NivelEducativo" class="nav-link" aria-current="page">Nivel Educativo</router-link>
+                </li>
+
+                <!--usuario-->
                   <li data-toggle="collapse" data-target="#new" class="collapsed">
-                  <a href="#"><i class="fa fa-car fa-lg"></i> Nivel Educativo <span class="arrow"></span></a>
+                  <router-link exact-active-class="active" to="/usuarios" class="nav-link" aria-current="page">USUARIOS</router-link>
                 </li>
-                <ul class="sub-menu collapse" id="new">
-                  <li>New New 1</li>
-                  <li>New New 2</li>
-                  <li>New New 3</li>
-                </ul>
-
-
-           
+                 <!--reportes-->
+                  <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <router-link exact-active-class="active" to="/reportes" class="nav-link" aria-current="page">REPORTES</router-link>
+                </li>
+                 </ul>  
      </div>
 </div>
     
@@ -67,9 +57,14 @@
   background-color: #2e353d;
   position: fixed;
   top: 0px;
-  width: 300px;
+  width: 20%;
+  max-width:20%;
+  min-width: 20%;
+  min-height:100%;
   height: 100%;
   color: #e1ffff;
+  background-image:url("@/assets/fondo.png") ;
+   opacity: 0.7;
 }
 .nav-side-menu .brand {
   background-color: #23282e;
@@ -77,6 +72,8 @@
   display: block;
   text-align: center;
   font-size: 14px;
+  background-image:url("@/assets/fondo.png") ;
+   opacity: 0.7;
 }
 .nav-side-menu .toggle-btn {
   display: none;
@@ -192,5 +189,11 @@ body {
   margin: 0px;
   padding: 0px;
 }
-
+#icon {
+  width:50%;
+  position: relative;
+  background-position: center center;
+  background-size: 100px auto;
+  
+}
 </style>
