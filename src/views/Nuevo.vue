@@ -5,14 +5,14 @@
             <div class="container  izquierda">
                  <form action="" class="form-horizontal">
                     <div class="form-group left">
-                       <label for="" class="control-label col-sm-2">Nombre</label>
+                       <label for="" class="control-label col-sm-2">NOMBRE</label>
                        <div class="col-sm-10">
                           <input type="text" class="form-control" name="name" id="name" v-model="form.name">
                        </div>
                     </div>
                   <div class="form-group left row">
                       <div class="col">
-                            <label for="" class="control-label col-sm-3">Año</label>
+                            <label for="" class="control-label col-sm-3">AÑO</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" name="year" id="year" v-model="form.year">
                             </div>
@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group left row">
                       <div class="col">
-                            <label for="" class="control-label col-sm-3"># Paginas</label>
+                            <label for="" class="control-label col-sm-3">N° PÁGINAS</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" name="num_pages" id="num_pages" v-model="form.num_pages">
                             </div>
@@ -42,41 +42,35 @@
                       <div class="col">
                             <label for="" class="control-label col-sm-3">PDF</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" name="pdf" id="pdf" v-model="form.pdf">
+                                <input type="file" class="form-control" name="pdf" id="pdf">
                             </div>
                         </div>
                         <div class="col">
                           <label for="" class="control-label col-sm-5">IMAGEN</label>
                           <div class="col-sm-7">
-                             <input type="text" class="form-control"  name="img" id="img" v-model="form.img">
+                             <input type="file" class="form-control"  name="img" id="img">
                           </div>
                         </div> 
                     </div>
 
-                    <div class="form-group left row">
-                      <div class="col">
-                            <label for="" class="control-label col-sm-3">USUARIO MATERIAL</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="material_users_id" id="material_users_id" v-model="form.material_users_id">
-                            </div>
-                        </div>
+                    <!-- <div class="form-group left row">
                         <div class="col">
-                          <label for="" class="control-label col-sm-5">ID TIPO DE MATERIAL</label>
+                          <label for="" class="control-label col-sm-5">TIPO DE MATERIAL</label>
                           <div class="col-sm-7">
                              <input type="text" class="form-control" name="type_material_id" id="type_material_id" v-model="form.type_material_id">
                           </div>
                         </div> 
-                    </div>
+                    </div> -->
                    
-                    <div class="form-group left row">
+                    <!-- <div class="form-group left row">
                       <div class="col">
-                            <label for="" class="control-label col-sm-3">ID AUTOR</label>
+                            <label for="" class="control-label col-sm-3">AUTOR</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" name="author_books_id" id="author_books_id" v-model="form.author_books_id">
                             </div>
                         </div>
                         <div class="col">
-                          <label for="" class="control-label col-sm-5">EDITORIAL ID</label>
+                          <label for="" class="control-label col-sm-5">EDITORIAL</label>
                           <div class="col-sm-7">
                              <input type="text" class="form-control" name="editorial_id" id="editorial_id" v-model="form.editorial_id">
                           </div>
@@ -84,23 +78,24 @@
                     </div>
                   <div class="form-group left row">
                       <div class="col">
-                            <label for="" class="control-label col-sm-3">ID AREA</label>
+                            <label for="" class="control-label col-sm-3">AREA</label>
                             <div class="col-sm-7">
                                 <input type="text" class="form-control" name="area_id" id="area_id" v-model="form.area_id">
                             </div>
-                        </div>
-                        <div class="col">
-                          <label for="" class="control-label col-sm-5">ID NIVELES DE EDUCACION</label>
+                        </div> -->
+                        <!-- <div class="col">
+                          <label for="" class="control-label col-sm-5"> NIVEL DE EDUCACIÓN</label>
                           <div class="col-sm-7">
                              <input type="text" class="form-control" name="material_educational_leves_id" id="material_educational_leves_id" v-model="form.material_educational_leves_id">
                           </div>
                         </div> 
-                    </div>
+                    </div> -->
 
 
-                    <div class="form-group">
+
+                    <div class="form-group botones">
                       <button type="button" class="btn btn-primary" v-on:click="guardar()" >Guardar</button>
-                      <button type="button" class="btn btn-dark margen" v-on:click="salir()"  >Salir</button>
+                      <button type="button " class="btn btn-dark margen salir" v-on:click="salir()"  >Salir</button>
                     </div> 
                 </form>
 
@@ -166,11 +161,20 @@ export default {
 }
 </script>
 <style scoped>
+.container{
+    margin-top: 12vh;
+}
 .left{
     text-align:  left;
 }
    .izquierda{
         text-align: left;
         width: 50%;
+    }
+    .botones{
+        margin-top: 3vh;
+    }
+    .salir{
+        margin-left:1vh;
     }
 </style>
