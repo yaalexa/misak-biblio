@@ -7,7 +7,7 @@
         </div>
         <div class="cara2">
             <section>
-                <h1>Reporte de Visualizacion</h1> 
+                <h1>Reporte de Visualizacion del material</h1> 
                 <br>
                     <label for="start">Fecha de inicio:</label>
                     <input type="date" id="start" name="trip-start" value="" min="2018-01-01" max="2050-1-1">
@@ -16,6 +16,8 @@
                     <label for="datepicker-sm">Arias:</label>
                     <b-form-select id="example-locales" v-model="locale" :options="locales" class="mb-2"></b-form-select>
                     <b-button variant="outline-primary">Busar</b-button>
+                    <br>
+                    <LineChartGenerator/>
                     <table class="table">
                         <thead>
                             <tr>
@@ -43,6 +45,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import LineChartGenerator from '@/components/charts/Line.vue';
 import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 export default {
@@ -59,6 +62,7 @@ export default {
     components:{
         Header,
       //  Footer
+      LineChartGenerator
     },
     
 }

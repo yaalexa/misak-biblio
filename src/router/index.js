@@ -23,6 +23,10 @@ import Reportes from '../views/reportes/vista.vue';
 import ReportesDescargas from '../views/reportes/Descargas.vue';
 import ReportesVisualizacion from '../views/reportes/Visualizacion.vue';
 
+import Bar from '@/components/charts/Bar.vue';
+import LineChartGenerator from '@/components/charts/Line.vue';
+import Doughnut from '@/components/charts/Doughnut.vue';
+
 
 Vue.use(VueRouter)
 
@@ -111,6 +115,21 @@ const routes = [
   name: 'Visualizacion',
   path: '/Visualizacion',
   component: ReportesVisualizacion
+},
+{
+  name: 'Grafica',
+  path: '/Grafica',
+  component: Bar
+},
+{
+  name:'GraficaLinea',
+  path: '/GraficaLinea',
+  component: LineChartGenerator
+},
+{
+  name:'Doughnut',
+  path: '/Doughnut',
+  component: Doughnut
 }
 ]
 
