@@ -7,12 +7,17 @@ import welcome from '../views/welcome.vue';
 
 import Editar from '../views/Editar.vue';
 import Nuevo from '../views/Nuevo.vue';
+
  // componentes para tipo de material
 
 
 import CrearEditorial from '../views/Editorial/Crear.vue';
 import EditarEditorial from '../views/Editorial/Editar';
 import MostrarEditorial from '../views/Editorial/Mostrar.vue';
+
+import CrearAutores from '../views/Autores/Crear.vue';
+import EditarAutores from '../views/Autores/Editar.vue';
+import MostrarAutores from '../views/Autores/Mostrar.vue';
 
 //para usuarios
 import Usuarios from'../views/usuarios/usuarios.vue';
@@ -82,6 +87,21 @@ component: EditarEditorial
 name: 'MostrarEditorial',
 path: '/Editorial',
 component: MostrarEditorial
+},
+{
+  name: 'CrearAutores',
+  path: '/Crear',
+  component: CrearAutores
+},
+{
+name: 'EditarAutores',
+path: '/Editar/:id',
+component: EditarAutores
+},
+{
+name: 'MostrarAutores',
+path: '/Mostrar',
+component: MostrarAutores
 }
 ]
 

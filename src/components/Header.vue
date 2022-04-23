@@ -15,8 +15,8 @@
                 <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">MATERIAL</router-link>
                 </li>
 
-                 <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> AUTORES <span class="arrow"></span></a>
+                 <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/Mostrar" class="nav-link" aria-current="page">Autores</router-link>
                 </li>
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
