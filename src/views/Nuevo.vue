@@ -3,7 +3,7 @@
         <Header />
 
             <div class="container  izquierda">
-                 <form action="" class="form-horizontal">
+                 <form @submit.prevent="addLibro" action="" class="form-horizontal" enctype="multipart/form-data">
                     <div class="form-group left">
                        <label for="" class="control-label col-sm-2">Nombre</label>
                        <div class="col-sm-10">
@@ -38,20 +38,6 @@
                           </div>
                         </div> 
                     </div>
-                   <div class="form-group left row">
-                      <div class="col">
-                            <label for="" class="control-label col-sm-3">PDF</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="pdf" id="pdf" v-model="form.pdf">
-                            </div>
-                        </div>
-                        <div class="col">
-                          <label for="" class="control-label col-sm-5">IMAGEN</label>
-                          <div class="col-sm-7">
-                             <input type="text" class="form-control"  name="img" id="img" v-model="form.img">
-                          </div>
-                        </div> 
-                    </div>
 
                     <div class="form-group left row">
                       <div class="col">
@@ -69,12 +55,7 @@
                     </div>
                    
                     <div class="form-group left row">
-                      <div class="col">
-                            <label for="" class="control-label col-sm-3">ID AUTOR</label>
-                            <div class="col-sm-7">
-                                <input type="text" class="form-control" name="author_books_id" id="author_books_id" v-model="form.author_books_id">
-                            </div>
-                        </div>
+                      
                         <div class="col">
                           <label for="" class="control-label col-sm-5">EDITORIAL ID</label>
                           <div class="col-sm-7">
@@ -89,18 +70,29 @@
                                 <input type="text" class="form-control" name="area_id" id="area_id" v-model="form.area_id">
                             </div>
                         </div>
-                        <div class="col">
-                          <label for="" class="control-label col-sm-5">ID NIVELES DE EDUCACION</label>
-                          <div class="col-sm-7">
-                             <input type="text" class="form-control" name="material_educational_leves_id" id="material_educational_leves_id" v-model="form.material_educational_leves_id">
-                          </div>
-                        </div> 
+                       
                     </div>
+                    <div class="col">
+                          <label for="" class="control-label col-sm-5">pdf</label>
+                          <div class="col-sm-7">
+                             <input type="text" class="form-control" name="pdf" id="pdf" v-model="form.pdf">
+                          </div>
+                        </div>
+                    <br>
+                    Imagen:
+                    <br>
+                    <input type="file" @change="obtenerImagen" name="img" id="" >
+                    <br><br>
+
+                    <figure>
+                        <img width="200" height="200" :src="imagen" alt="Foto-Libro">
+                    </figure>
 
 
                     <div class="form-group">
-                      <button type="button" class="btn btn-primary" v-on:click="guardar()" >Guardar</button>
+                      <button type="button" class="btn btn-primary" v-on:click="guardar()" >Guardar</button> 
                       <button type="button" class="btn btn-dark margen" v-on:click="salir()"  >Salir</button>
+                      
                     </div> 
                 </form>
 
@@ -118,6 +110,7 @@ export default {
     name:"Nuevo",
     data:function(){
         return {
+            imagenMiniatura:'',
             form:{
                 "name":"",
                 "isbn" : "",
@@ -137,13 +130,35 @@ export default {
         //Footer
     },
     methods:{
-        guardar(){
+        obtenerImagen(e){
+            let file = e.target.files[0];
+            this.form.img= file;
+            this.cargarImagen(file);
+        },
+        cargarImagen(file){
+            let reader =new FileReader();
+            reader.onload = (e)=>{
+                this.imagenMiniatura = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        },
+        
+        /* addLibro(){
+            let formData =new FormData();
+            formData.append('img', this.form.img);
+
+            axios.post("http://127.0.0.1:8000/api/materials",formData)
+            .then(Response => {
+                console.log(Response.data);
+            })
+        }, */
+         guardar(){
             
             axios.post("http://127.0.0.1:8000/api/materials",this.form)
             .then(data =>{
                 console.log(data);
-                this.makeToast("Hecho","materila creado","success");
-                this.$router.push("/dashboard");
+                 this.makeToast("Hecho","material creado","success");
+                /*this.$router.push("/dashboard"); */
             }).catch( e =>{
                 console.log(e);
                  this.makeToast("Error","Error al guardar","error");
@@ -152,7 +167,7 @@ export default {
         salir(){
             this.$router.push("/dashboard");
         },
-        makeToast(titulo,texto,tipo) {
+         makeToast(titulo,texto,tipo) {
             this.toastCount++
             this.$bvToast.toast(texto, {
             title: titulo,
@@ -160,17 +175,28 @@ export default {
             autoHideDelay: 5000,
             appendToast: true
             })
-        }
+        } 
         
-    }
+    },
+    computed:{
+            imagen(){
+                return this.imagenMiniatura;
+            }
+        },
+    
 }
 </script>
+
+
+
 <style scoped>
-.left{
-    text-align:  left;
+.left {
+  text-align: left;
 }
-   .izquierda{
-        text-align: left;
-        width: 50%;
-    }
+.izquierda {
+  text-align: left;
+  width: 70%;
+  margin-left: 400px;
+  margin-top: 20px;
+}
 </style>

@@ -9,6 +9,12 @@ import Editar from '../views/Editar.vue';
 import Nuevo from '../views/Nuevo.vue';
  // componentes para tipo de material
 
+import MostrarMaterial from'../views/material/Mostrar.vue';
+import CrearMaterial from '../views/material/Crear.vue';
+import EditarMaterial from'../views/material/Editar.vue';
+import Usuario from'../views/Usuario.vue';
+
+
 
 import CrearEditorial from '../views/Editorial/Crear.vue';
 import EditarEditorial from '../views/Editorial/Editar';
@@ -80,7 +86,6 @@ const routes = [
     name: 'Nuevo',
     component: Nuevo
   },
- 
 {
   name: 'CrearEditorial',
   path: '/CrearEdit',
@@ -90,6 +95,17 @@ const routes = [
 name: 'EditarEditorial',
 path: '/Editar/:id',
 component: EditarEditorial
+},
+{
+
+    name: 'editarMaterial',
+    path: '/editar/:id',
+    component: EditarMaterial
+},
+{
+  path: '/Usuario',
+  name: 'Usuario',
+  component: Usuario
 },
 {
 name: 'MostrarEditorial',
@@ -110,6 +126,7 @@ component: EditarNivelEdicativo
 name: 'MostrarNivelEducativo',
 path: '/NivelEducativo',
 component: MostrarNivelEdicativo
+
 }
 ]
 

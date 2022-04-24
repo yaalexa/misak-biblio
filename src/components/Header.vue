@@ -95,7 +95,7 @@
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
-  float: right;
+  /* float: right; */
 }
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
