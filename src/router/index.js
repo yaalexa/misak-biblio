@@ -19,6 +19,10 @@ import CrearAutores from '../views/Autores/Crear.vue';
 import EditarAutores from '../views/Autores/Editar.vue';
 import MostrarAutores from '../views/Autores/Mostrar.vue';
 
+import CrearTipomaterial from '../views/Tipomaterial/Crear.vue';
+import EditarTipomaterial from '../views/Tipomaterial/Editar.vue';
+import MostrarTipomaterial from '../views/Tipomaterial/Mostrar.vue';
+
 //para usuarios
 import Usuarios from'../views/usuarios/usuarios.vue';
 import Unuevo from'../views/usuarios/unuevo.vue';
@@ -102,6 +106,21 @@ component: EditarAutores
 name: 'MostrarAutores',
 path: '/Mostrar',
 component: MostrarAutores
+},
+{
+  name: 'CrearTipomaterial',
+  path: '/Crear',
+  component: CrearTipomaterial
+},
+{
+name: 'EditarTipomaterial',
+path: '/Editar/:id',
+component: EditarTipomaterial
+},
+{
+name: 'MostrarTipomaterial',
+path: '/Mostrarmaterial',
+component: MostrarTipomaterial
 }
 ]
 

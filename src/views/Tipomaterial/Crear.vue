@@ -10,15 +10,9 @@
             <section>
                 <form @submit.prevent="crear">
                     <div>
-                        <h1>Crear Nuevo Autor</h1>
+                        <h1>Crear Tipo de Material</h1>
                         <label for="">name: </label>
-                        <input type="text" v-model="autor.name">
-                        <br><br>
-                        <label for="">Direccion: </label>
-                        <input type="text" v-model="autor.address">
-                        <br><br>
-                        <label for="">Telefono </label>
-                        <input type="text" v-model="autor.phone">
+                        <input type="text" v-model="tipomaterial.name">
                         <br><br>
                     </div>
                     <div class="col-12">
@@ -37,13 +31,11 @@ import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 export default {
-    name:"CrearAutores",
+    name:"CrearTipomaterial",
     data(){
         return {
-            autor:{
-                name:"",
-                address:"",
-                phone:""
+            tipomaterial:{
+                name:""
             }
         }
     },
@@ -53,8 +45,8 @@ export default {
     },
     methods:{
         async crear(){
-            await this.axios.post('http://127.0.0.1:8000/api/authors',this.autor).then(response=>{
-                this.$router.push({name:"MostrarAutores"})
+            await this.axios.post('http://127.0.0.1:8000/api/type_materials',this.tipomaterial).then(response=>{
+                this.$router.push({name:"MostrarTipomaterial"})
             }).catch(error=>{
                 console.log(error)
             })

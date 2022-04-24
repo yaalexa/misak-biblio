@@ -16,12 +16,12 @@
                 </li>
 
                  <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <router-link exact-active-class="active" to="/Mostrar" class="nav-link" aria-current="page">Autores</router-link>
+                <router-link exact-active-class="active" to="/Mostrar" class="nav-link" aria-current="page">AUTORES</router-link>
                 </li>
 
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> TIPO DE MATERIAL <span class="arrow"></span></a>
-                </li>  
+                 <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <router-link exact-active-class="active" to="/Mostrarmaterial" class="nav-link" aria-current="page">TIPO DE MATERIAL</router-link>
+                </li>
 
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <router-link exact-active-class="active" to="/Editorial" class="nav-link" aria-current="page">EDITORIAL</router-link>
@@ -83,7 +83,7 @@
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
-  float: right;
+  
 }
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
