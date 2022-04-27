@@ -72,18 +72,20 @@
                         </div>
                        
                     </div>
-                    <div class="col">
-                          <label for="" class="control-label col-sm-5">pdf</label>
-                          <div class="col-sm-7">
-                             <input type="text" class="form-control" name="pdf" id="pdf" v-model="form.pdf">
-                          </div>
-                        </div>
+                    PDF
                     <br>
+                    <input type="file" @change="obtenerPdf" name="pdf" id="" >
+                    <br><br>
+
+                    <figure>
+                        <!-- <embed :src="pdf" type="application/pdf" width="100%" height="800px" /> -->
+                        <iframe class="pdf" :src="pdf"></iframe>
+                    </figure>
+                
                     Imagen:
                     <br>
                     <input type="file" @change="obtenerImagen" name="img" id="" >
                     <br><br>
-
                     <figure>
                         <img width="200" height="200" :src="imagen" alt="Foto-Libro">
                     </figure>
@@ -111,6 +113,7 @@ export default {
     data:function(){
         return {
             imagenMiniatura:'',
+            pdf:'',
             form:{
                 "name":"",
                 "isbn" : "",
@@ -139,6 +142,18 @@ export default {
             let reader =new FileReader();
             reader.onload = (e)=>{
                 this.imagenMiniatura = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        },
+        obtenerPdf(e){
+            let file = e.target.files[0];
+            this.form.pdf= file;
+            this.cargarPdf(file);
+        },
+        cargarPdf(file){
+            let reader =new FileReader();
+            reader.onload = (e)=>{
+                this.pdf = e.target.result;
             }
             reader.readAsDataURL(file);
         },
@@ -181,8 +196,12 @@ export default {
     computed:{
             imagen(){
                 return this.imagenMiniatura;
+            },
+            pdf(){
+                return this.pdf;
             }
         },
+        
     
 }
 </script>
@@ -198,5 +217,9 @@ export default {
   width: 70%;
   margin-left: 400px;
   margin-top: 20px;
+}
+.pdf{
+    width:50vh ;
+    height:60vh ;
 }
 </style>
