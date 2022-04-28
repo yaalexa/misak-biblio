@@ -1,20 +1,29 @@
 <template>
     <div>
            
-                <Header/>
+        <Header/>
+                              
            
-            <div class="container izquierda">
-                <div class="row">
+      <div class="container izquierda">
+            <div class="derecho">
+                
+                <div class="">haolalalddddddddddddddddddddddddddddddddddddddddddddddd </div>  
+                 <div class=""><Perfil/></div>
+
+                
+                
+            </div>   
+         <div class="row">
  
-      <div class="col-md-12">
-      
-        <h1>MATERIAL </h1> 
-        
-        <input type="text" v-model="buscar" class="form-control" placeholder="Ejemplo: Charmander"/>              
+             <div class="col-md-12">
+                        
+                 <h1>MATERIAL </h1> 
+                    
+                 <input type="text" v-model="buscar" class="form-control" placeholder="Ejemplo: Charmander"/>              
+               
+            </div>
  
-      </div>
- 
-    </div>
+        </div>
  
     <div class="row mt-3">
  
@@ -94,6 +103,7 @@
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import axios from 'axios';
+import Perfil from '@/components/Perfil.vue';
 export default {
     name:"Dashboard",
     data(){
@@ -104,6 +114,7 @@ export default {
     },
     components:{
         Header,
+        Perfil
       //  Footer
     },
     methods:{
@@ -126,6 +137,17 @@ export default {
 <style  scoped>
     .izquierda{
         text-align: left;
+        width: 50%;
+    }
+    .derecho{
+        background-color: #2e353d;
+        border: 1px solid;
+        display: flex;
+        flex-direction: columns;
+        align-items: right;
+        justify-content: flex-start;
+        border-width: 5px;
+        text-align: right;
         width: 50%;
     }
    

@@ -4,6 +4,7 @@
     <div class="brand"> 
        <img src="@/assets/logo.png" id="icon" alt="User Icon" />
     </div>
+    
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   
         <div class="menu-list">
@@ -53,30 +54,32 @@
                 <li  data-toggle="collapse" data-target="#products" class="collapsed">
                   <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">Información del usuario</router-link>
                 </li>
-   <fieldset >
-      <div class="contenedor"> 
-        <table>
-            <thead>
+      <fieldset >
+          <div class="contenedor"> 
+            <table>
+                <thead>
+                      <tr>
+                          <!-- <td class="td">Tipo Usuario: {{}} </td> -->
+                      </tr>
+                      <tr>
+                        <td> <img src="@/assets/logosena.png" ></td> 
+                      </tr>
+                    
+                </thead>
+                <tbody>
                   <tr>
-                      <td class="td">Tipo Usuario: {{}} </td>
-                  </tr>
-                  <tr>
-                     <td> <img src="@/assets/mifoto.jpg" ></td> 
-                  </tr>
-                 
-            </thead>
-            <tbody>
-                  <td class="td"> Nombre: {{}} </td>
-            </tbody>
-            <tfoot>
-                <tr>
                     <td colspan="7" class="centro">Servicio Nacional de Aprendizaje SENA</td>
-                </tr>
-            </tfoot>
-        </table>
-      </div>
-    </fieldset>
-    <input type=button name=cerar value=CerrarSesion onclick="window.close()">
+                  </tr>   
+                </tbody>
+                <tfoot>
+                    <tr>
+                      <!-- <td class="td"> Nombre: {{}} </td> -->  
+                    </tr>
+                </tfoot>
+            </table>
+          </div>
+        </fieldset>
+        <input type=button name=cerar value=CerrarSesion onclick="window.close()">
 
 
                 <ul class="sub-menu collapse" id="new">
@@ -104,7 +107,7 @@
             },
             mounted () {
                 axios
-                .get('http://127.0.0.1:8000/api/users')
+                .get('http://localhost:8000/api/users')
                 .then(response => (this.info = response))
                 console.log(this.info)
             }  ,

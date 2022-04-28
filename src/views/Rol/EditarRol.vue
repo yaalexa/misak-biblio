@@ -12,7 +12,7 @@
                 
                  <label for="" class="control-label"> Editando rol </label>
                  <div class="col-sm-4">
-                      <input type="text" class="form-control" v-model="rol.name" placeholder="rol.name" >
+                      <input type="text" class="form-control" v-model="rol.name" placeholder="rol name">
                  </div>
                  <div class="col-sm-4">
                       <button type="submit" class="btn btn-primary">Guardar</button>
@@ -48,6 +48,7 @@ export default {
         //Footer
     },
     mounted(){
+        
         this.mostrarRol()
     },
     methods:{
