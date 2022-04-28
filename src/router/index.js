@@ -31,8 +31,14 @@ import CrearNivelEdicativo from '../views/NivelEducation/Crear.vue';
 import EditarNivelEdicativo from '../views/NivelEducation/Editar.vue';
 import MostrarNivelEdicativo from '../views/NivelEducation/Mostrar.vue';
 
-import Library from '../views/Library.vue';
+//para autores
 
+import CrearAutor from '../views/Autores/Crear.vue';
+import EditarAutor from '../views/Autores/Editar.vue';
+import MostrarAutor from '../views/Autores/Mostrar.vue';
+
+import Library from '../views/Library.vue';
+ 
 Vue.use(VueRouter)
 
 const routes = [
@@ -127,6 +133,21 @@ name: 'MostrarNivelEducativo',
 path: '/NivelEducativo',
 component: MostrarNivelEdicativo
 
+},
+{
+name: 'MostrarAutor',
+path: '/Autor',
+component: MostrarAutor
+},
+{
+  name: 'CrearAutor',
+  path: '/CrearAutor',
+  component: CrearAutor
+},
+{
+name: 'EditarAutor',
+path: '/Editar/:id',
+component: EditarAutor
 }
 ]
 

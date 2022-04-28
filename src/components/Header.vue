@@ -19,7 +19,7 @@
                 </li>
 
                  <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> AUTORES <span class="arrow"></span></a>
+                  <router-link exact-active-class="active" to="/Autor" class="nav-link" aria-current="page">AUTORES</router-link>
                 </li>
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">

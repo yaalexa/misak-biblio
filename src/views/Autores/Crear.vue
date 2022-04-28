@@ -10,14 +10,20 @@
             <section>
                 <form @submit.prevent="crear">
                     <div>
-                        <h1>Crear Nuevo Editorial</h1>
-                        <label for="">name: </label>
-                        <input type="text" v-model="editorial.name">
+                        <h1>Crear Nuevo Autor</h1>
+                        <label for="">Nombre: </label>
+                        <input type="text" v-model="author.name">
+
+                        <label for="">Dirección: </label>
+                        <input type="text" v-model="author.address">
+
+                        <label for="">Telefono: </label>
+                        <input type="text" v-model="author.phone">
+
                         <br><br>
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Guardar</button>
-                        <button type="button" class="btn btn-dark margen" v-on:click="salir()">Salir</button>
                     </div>    
                 </form>    
             </section>
@@ -32,11 +38,13 @@ import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 export default {
-    name:"CrearEditorial",
+    name:"CrearAutor",
     data(){
         return {
-            editorial:{
-                name:""
+            author:{
+                name:"",
+                address:"",
+                phone:""
             }
         }
     },
@@ -46,19 +54,12 @@ export default {
     },
     methods:{
         async crear(){
-            await this.axios.post('http://127.0.0.1:8000/api/editorials',this.editorial).then(response=>{
-                this.$router.push({name:"MostrarEditorial"})
-                .then(data =>{
-                alert("se ha creado una nueva editorial");
-                this.$router.push("/Editorial");
-            });
+            await this.axios.post('http://127.0.0.1:8000/api/authors',this.author).then(response=>{
+                this.$router.push({name:"MostrarAutor"})
             }).catch(error=>{
                 console.log(error)
             })
-        },
-        salir(){
-            this.$router.push("/Editorial");
-        },
+        }
     }
 }
 </script>
