@@ -1,6 +1,7 @@
 <template>
-
+ <section>
 <div class="nav-side-menu">
+ 
     <div class="brand"> 
        <img src="@/assets/logo.png" id="icon" alt="User Icon" />
     </div>
@@ -14,38 +15,67 @@
                 <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <router-link exact-active-class="active" to="/Library" class="nav-link" aria-current="page">BIBLIOTECA</router-link>
                 </li>
+                <!--
                  <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">MATERIAL</router-link>
                 </li>
-
-                 <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <a href="#"><i class="fa fa-gift fa-lg"></i> AUTORES <span class="arrow"></span></a>
-                </li>
-
-                <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-globe fa-lg"></i> TIPO DE MATERIAL <span class="arrow"></span></a>
-                </li>  
-
-                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <li data-toggle="collapse" data-target="#new" class="collapsed">
                 <router-link exact-active-class="active" to="/Editorial" class="nav-link" aria-current="page">EDITORIAL</router-link>
                 </li>
+
+                    <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                   <router-link exact-active-class="active" to="/Autores" class="nav-link" aria-current="page">AUTORES</router-link>
+                </li>
+                
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                   <router-link exact-active-class="active" to="/TipoMaterial" class="nav-link" aria-current="page">TIPO MATERIAL</router-link>
+               
+                </li>  
+
+              
                 
                    <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <router-link exact-active-class="active" to="/NivelEducativo" class="nav-link" aria-current="page">Nivel Educativo</router-link>
-                </li>
+                <router-link exact-active-class="active" to="/NivelEducativo" class="nav-link" aria-current="page">NIVEL EDUCATIVO</router-link>
+                </li>-->
 
                 <!--usuario-->
                   <li data-toggle="collapse" data-target="#new" class="collapsed">
                   <router-link exact-active-class="active" to="/usuarios" class="nav-link" aria-current="page">USUARIOS</router-link>
                 </li>
+               <!-- <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <router-link exact-active-class="active" to="/rol" class="nav-link" aria-current="page"> ROLES </router-link>
+                </li>-->
                  <!--reportes-->
                   <li data-toggle="collapse" data-target="#new" class="collapsed">
                   <router-link exact-active-class="active" to="/reportes" class="nav-link" aria-current="page">REPORTES</router-link>
                 </li>
                  </ul>  
      </div>
+     <fieldset >
+      <div class="contenedor"> 
+        <table>
+            <thead>
+                  <tr>
+                      <td class="td">Tipo Usuario: {{}} </td>
+                  </tr>
+                  <tr>
+                     <td> <img src="@/assets/sena.png" id="icon" ></td> 
+                  </tr>
+                 
+            </thead>
+            <tbody>
+                  <td class="td"> Nombre: {{}} </td>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7" class="centro">Servicio Nacional de Aprendizaje SENA</td>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+    </fieldset> 
 </div>
-    
+    </section>
 </template>
 
 <style>
@@ -55,21 +85,18 @@
   font-size: 12px;
   font-weight: 200;
   background-color: #2e353d;
-  position: fixed;
-  top: 0px;
-  width: 20%;
-  max-width:20%;
-  min-width: 20%;
-  min-height:100%;
-  height: 100%;
   color: #e1ffff;
   background-image:url("@/assets/fondo.png") ;
    opacity: 0.7;
+ 
+  height: 100vh;
+  width: 100%;
 }
 .nav-side-menu .brand {
   background-color: #23282e;
   line-height: 50px;
-  display: block;
+  
+  width: 100%;
   text-align: center;
   font-size: 14px;
   background-image:url("@/assets/fondo.png") ;
@@ -95,7 +122,7 @@
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle;
-  /* float: right; */
+  float: right;
 }
 .nav-side-menu ul .active,
 .nav-side-menu li .active {
@@ -154,7 +181,7 @@
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
-@media (max-width: 767px) {
+
   .nav-side-menu {
     position: relative;
     width: 100%;
@@ -168,7 +195,6 @@
     top: 10px;
     z-index: 10 !important;
     padding: 3px;
-    background-color: #ffffff;
     color: #000;
     width: 40px;
     text-align: center;
@@ -179,21 +205,20 @@
     padding-left: 20px;
     line-height: 50px !important;
   }
-}
-@media (min-width: 767px) {
+
+
   .nav-side-menu .menu-list .menu-content {
     display: block;
   }
-}
+
 body {
   margin: 0px;
   padding: 0px;
 }
 #icon {
-  width:50%;
-  position: relative;
+  width:70%;
   background-position: center center;
   background-size: 100px auto;
-  
+ 
 }
 </style>

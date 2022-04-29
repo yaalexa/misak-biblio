@@ -8,7 +8,7 @@
             <div class="cara2">
             <section>  
               <div class="container  izquierda">
-               <h1>EDITAR MATERIAL</h1>  
+               <h1>EDITAR AREAS</h1>  
             
                 <form action="" class="form-horizontal">
                    <div class="col"></div>
@@ -40,7 +40,7 @@ import Header from '@/components/Header.vue';
 //import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 export default {
-  name:"Editar",
+  name:"EditarAreas",
   components:{
     Header,
     //Footer
@@ -55,31 +55,31 @@ export default {
   },
   methods:{
       editar(){
-          axios.put(`http://localhost:8000/api/editorials/${this.form.editorialid}`,this.form)
+          axios.put(`http://localhost:8000/api/areas/${this.form.areasid}`,this.form)
           .then(response=>{
               console.log(response);
-              this.$router.push("/Editorial");
+              this.$router.push("/Areas");
           })
       },
       salir(){
-        this.$router.push("/Editorial");
+        this.$router.push("/Areas");
       },
       eliminar(){
         var enviar = {
-            "editorialid" : this.form.editorialid,
+            "areasid" : this.form.areasid,
           
         };
-        axios.delete("http://localhost:8000/api/editorials", { headers : enviar})
+        axios.delete("http://localhost:8000/api/areas", { headers : enviar})
         .then( datos => {
             console.log(datos);
-           this.$router.push("/Editorial");
+           this.$router.push("/areas");
         });
 
       }
   },
   mounted:function(){
-      this.form.editorialid= this.$route.params.id;
-      axios.get("http://localhost:8000/api/editorials/?id="+ this.form.editorialid)
+      this.form.areasid= this.$route.params.id;
+      axios.get("http://localhost:8000/api/areas/?id="+ this.form.areasid)
       .then( datos => {
         
         this.form.name = datos.data[0].name;

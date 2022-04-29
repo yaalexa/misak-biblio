@@ -1,40 +1,58 @@
 <template>
-<div class="pagen">
-           
+ <div class="pantalla">
+        <div class="cara1">
+            <header>
                 <Header/>
-                <div class="container izquierda">
-                <div class="contenedor">
-                 
- <b-row class="mt-5">
-     <b-col cols="12" md="5">
+            </header>
+        </div>
+        <div class="cara2">
+          <section>
+      <b-container fluid class="">
+  <b-row>
+    <b-col>
+      <b-img  fluid :src="imagem" alt="Image 1" class="text-center"></b-img>
+      <router-link exact-active-class="active" to="/dashboard" class="nav-link" aria-current="page">MATERIAL</router-link>
+    </b-col>
+    <b-col>
+      <b-img  fluid :src="imagee" alt="Image 2" class="text-center"></b-img>
+      <router-link exact-active-class="active" to="/Editorial" class="nav-link" aria-current="page">EDITORIAL</router-link>
+    </b-col>
+    <b-col>
+      <b-img  fluid :src="imagea" alt="Image 3" class="text-center"></b-img>
+      <router-link exact-active-class="active" to="/Autores" class="nav-link" aria-current="page">AUTOR</router-link>
+    </b-col>
+  </b-row>
+ <b-row>
+       <b-col>
+      <b-img  fluid :src="imagetm" alt="Image 3" class="text-center"></b-img>
+      <router-link exact-active-class="active" to="/TipoMaterial" class="nav-link" aria-current="page">TIPO MATERIAL</router-link>
+      </b-col>
+      <b-col>
+       <b-img  fluid :src="imaged" alt="Image 3" class="text-center"></b-img>
+      <router-link exact-active-class="active" to="/NivelEducativo" class="nav-link" aria-current="page">NIVEL EDUCATIVO</router-link>
+    </b-col>
+    <b-col>
+      <b-img  fluid :src="imagetarea" alt="Image 3" class="text-center"></b-img>
+      <router-link exact-active-class="active" to="/Areas" class="nav-link" aria-current="page">AREAS</router-link>
+    </b-col>
+     </b-row>
+    </b-container>
+ 
+</section>
+</div>
 
-      <b-card  bg-variant="transparent" class="text-center" text-variant="white"   >
-          <b-img  fluid :src="imagem" alt="material.jpg"  ></b-img>
-        <b-button variant="warning">Material</b-button>
-      </b-card>
-      </b-col>
-      <b-col cols="12" md="4">
-       <b-card  bg-variant="transparent" class="text-center" text-variant="white"  >
-          <b-img  fluid :src="imagem" alt="material.jpg"  ></b-img>
-        <b-button variant="warning">AUTOR</b-button>
-      </b-card>
-      </b-col>
-      <b-col cols="12" md="4">
-       <b-card  bg-variant="transparent" class="text-center" text-variant="white"  >
-          <b-img  fluid :src="imagem" alt="material.jpg"  ></b-img>
-        <b-button variant="warning">NIVEL</b-button>
-      </b-card>
-      </b-col>
-</b-row>
+</div>
 
-</div>
-</div>
-</div>
 
 </template>
 <script>
 import Header from '@/components/Header.vue';
-import imagem from "@/assets/material.png"
+import imagem from "@/assets/material.png";
+import imagee from "@/assets/Editorial.png";
+import imagea from "@/assets/autor.png";
+import imaged from "@/assets/nivel.png";
+import imagetm from "@/assets/tipotm.png";
+import imagetarea from "@/assets/aream.png";
 import axios from 'axios';
 export default {
     name:"welcome",
@@ -42,7 +60,12 @@ export default {
         return {
             material:null,
             pagina:1,
-            imagem: imagem
+            imagem: imagem,
+            imagee: imagee,
+            imagea:imagea,
+            imaged:imaged,
+            imagetm:imagetm,
+            imagetarea:imagetarea
         }
     },
     components:{
@@ -53,37 +76,36 @@ export default {
 }
 </script>
 <style  scoped>
-.text-center{
-         border-radius: 70%;
-         width: 60mm;
-}
-    .izquierda{
-        text-align: left;
-        width: 50%;
+ body{
+        margin: 0%;
     }
-    .pagen{
+    .pantalla{
     background-image:url("@/assets/Screenshot_2.png");
-  height: 100vh;
-	 background-repeat:no-repeat;
-	 background-size:cover;
-	 width:100%;
-	 height:100vh;
-	 overflow:auto;
-    filter: alpha(opacity=50);
-   }
+       background-repeat:no-repeat;
+	    background-size:cover;
+        display: flex;
+        filter: alpha(opacity=50);
+        width:100%;
+   	 height:100vh;
+    }
+    .cara1{
+        height: 100vh;
+        width: 20%; 
+    }
+    .cara2{
+        width: 80%;
+        height: 100vh;
+        overflow:auto;
+    }
+    
+   
+.text-center {
+  width:50%;
+  position: flex;
+  background-position: center center;
+  background-size: 100px auto;
+  margin-top: 2em;
 
-   .contenedor {
-  display: flex;
-  align-items: center;
-  flex-direction: column; 
-  justify-content: center;
-  width: 100%;
-  min-width: 100%;
-  min-height: 100%;
-   height:100vh;
-  padding: 20px;
-  max-width:100%;
 }
-
 
 </style>

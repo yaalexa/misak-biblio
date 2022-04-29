@@ -259,7 +259,7 @@ export default {
          document_type:"", 
          document_number:"",
          certificate_misak:"",
-         rols_id:2
+         rol_id:2
     }
   },
   methods:{
@@ -273,7 +273,7 @@ export default {
              "document_type":this.document_type,
              "document_number":this.document_number,
              "certificate_misak":this.certificate_misak,
-             "rols_id":2
+             "rol_id":2
         };
         axios.post('http://localhost:8000/api/register', json)
        .then( data =>{

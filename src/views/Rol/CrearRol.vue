@@ -1,12 +1,13 @@
 <template>
-  <div>
-     <Header />
-        <br>
-        esto es CreaRol.vue
-        <div class="container  izquierda">
-        <div class="col text-left">
-            <h1> Roles </h1>
-        </div>         
+  <div class="pantalla">
+        <div class="cara1">
+            <header>
+                <Header/>
+            </header>
+        </div>
+
+    <div class="cara2">
+            <section>     
         <form @submit.prevent="guardar" class="form-horizontal">
             <div class="form-group row">
                 
@@ -26,7 +27,10 @@
         <br>
                 
            
-    </div>
+ 
+ 
+  </section>
+   </div>
   </div>  
 </template>
 
@@ -35,7 +39,7 @@ import Header from '@/components/Header.vue'
 //import Footer from '@/components/Footer.vue'
 import axios from 'axios';
 export default {
-    name:"Crear",
+    name:"CrearRol",
     data:function(){
         return {
             form:{
@@ -49,7 +53,7 @@ export default {
     },
     mounted(){
         guardar()
-        this.$router.push("/mostrar");
+        this.$router.push("/Mostrar");
     },
     methods:{
         guardar(){

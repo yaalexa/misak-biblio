@@ -53,9 +53,10 @@ export default {
         };
         axios.post('http://localhost:8000/api/login', json)
        .then( data =>{
+         console.log(data.data.status)
            if(data.data.status == "1"){
             // localStorage.token = data.data.result.token;
-             this.$router.push('dashboard');
+             this.$router.push('/welcome');
            }else{
              this.error = true;
              this.error_msg = data.data.result.error_msg;

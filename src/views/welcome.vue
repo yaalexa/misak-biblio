@@ -1,22 +1,18 @@
 <template>
-    <div class="pagen">
-           
+    <div class="pantalla">
+        <div class="cara1">
+            <header>
                 <Header/>
-            
-            <div class="container izquierda">
-                <div class="contenedor">
-                   <div class="fadeIn first">
+            </header>
+        </div>
+        <div class="cara2">
+            <section>
                   <img class=""src="@/assets/LocoWeb3.png" id="icon" alt="User Icon" />
+
+                   </section>
                 </div>
                 </div>
 
-
-               
-
-            </div>
-
-        
-    </div>
 </template>
 <script>
 import Header from '@/components/Header.vue';
@@ -38,38 +34,38 @@ export default {
 }
 </script>
 <style  scoped>
-    .izquierda{
-        text-align: left;
-        width: 50%;
+ body{
+        margin: 0%;
     }
-    .pagen{
+    .pantalla{
     background-image:url("@/assets/Screenshot_2.png");
-  height: 100vh;
-	 background-repeat:no-repeat;
-	 background-size:cover;
-	 width:100%;
+       background-repeat:no-repeat;
+	    background-size:cover;
+        display: flex;
+        filter: alpha(opacity=50);
+        width:100%;
 	 height:100vh;
-	 overflow:auto;
-    filter: alpha(opacity=50);
-   }
-
-   .contenedor {
-  display: flex;
-  align-items: center;
-  flex-direction: column; 
-  justify-content: center;
-  width: 100%;
-  min-height: 100%;
-  padding: 20px;
-  max-width:100%;
-}
-
+    }
+    .cara1{
+        height: 100vh;
+        width: 20%;
+        
+    }
+    .cara2{
+        width: 80%;
+        height: 100vh;
+       
+        overflow:auto;
+    }
+    
+   
 #icon {
-  width:100%;
-  position: relative;
+  width:70%;
+  position: flex;
   background-position: center center;
   background-size: 100px auto;
   margin-left: 10em;
-  margin-top: 18em;
+  margin-top: 23em;
 }
+
 </style>

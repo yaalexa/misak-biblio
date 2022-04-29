@@ -1,60 +1,60 @@
 <template>
-    <div>
-<div><Header/></div>
-<br><br><br><br>
-
-<div class="container izquierda">
-                <div class="row">
- 
-      <div class="col-md-12">
-      
+ <div class="pantalla">
+        <div class="cara1">
+            <header>
+                <Header/>
+            </header>
+        </div>
+        <div class="cara2">
+        <section>
         <h1>USUARIOS </h1> 
         
         <input type="text" v-model="buscar" class="form-control" placeholder="Ingrese el documento de la persona a buscar "/>
 
  
-      </div>
- 
-    </div>
-    </div>
 
-        <button class="btn btn-primary" v-on:click="actualizarusuario()" >Buscar</button>
+        <button class="btn btn-primary" v-on:click="Buscar()" >Buscar</button>
         <button class="btn btn-primary" v-on:click="unuevo()" >Registrar nuevo usuario</button>
 
-        <button class="btn btn-primary" v-on:click="errored=true">Mostrar todo</button>
+        <!--<button class="btn btn-primary" v-on:click="errored=true">Mostrar todo</button>-->
         <br><br>
-<div class="container izquierda" v-if="errored==true">
+        <div class="container izquierda" >
                 <table class="table table-hover">
                 <thead>
                     <tr>
                                      <th>ID</th>
                                     <th>Name</th>
-                                    <th>fullName</th>
+                                    <th>Nombre</th>
                                     <th>Email</th>
-                                    <th>type Document</th>
-                                    <th>number Document</th>
-                                    <th>Certificate misak</th>
+                                    <th>Tipo Documento</th>
+                                    <th># Documento</th>
+                                    <th>Codigo Misak</th>
+                                     <th>Acciones</th>
 
 
                     </tr>
                 </thead>
                 <tbody>
                     
-                        <tr v-for="user in usuarios" :key="user.id">
-                                    <td>{{ user.id }}</td>
-                                    <td>{{ user.name }}</td>
-                                    <td>{{ user.full_name }}</td>
-                                    <td>{{ user.email}}</td>                                    
-                                    <td>{{ user.document_type}}</td>
-                                    <td>{{ user.document_number}}</td>
-                                    <th>{{user.certificate_misak}}</th>
-
-
+                        <tr v-for="usuarios in usuarios" :key="usuarios.id">
+                                    <td>{{ usuarios.id }}</td>
+                                    <td>{{ usuarios.name }}</td>
+                                    <td>{{ usuarios.full_name }}</td>
+                                    <td>{{ usuarios.email}}</td>                                    
+                                    <td>{{ usuarios.document_type}}</td>
+                                    <td>{{ usuarios.document_number}}</td>
+                                    <td>{{usuarios.certificate_misak}}</td>
+                                     <td>
+                                 <button class="btn btn-primary" v-on:click="actualizar(usuarios.id)" >Editar</button>
+                                <a type="button" @click="borrar(usuarios.id)" class="btn btn-danger"><font-awesome-icon icon="fa-solid fa-trash-can" />Borrar</a>
+                                </td>
                     </tr>
                      
                 </tbody>
                 </table>
 
+</div>
+</section>
 </div>
     </div>
 </template>
@@ -68,26 +68,31 @@ export default {
     Header,
     //Footer
   },
-    mounted(){
-       // alert('entro al metodo moin')
-       //this.miMetodo();
-       this.obtenerUsuarios();
-    },
+  
     created(){
 
     },
     data:function(){
         return{
             usuarios: null,
-            loading: true,
-            errored:false
+          
+           // loading: true,
+           // errored:false
 
         };
+    },
+      mounted:function(){
+        let direccion = "http://localhost:8000/api/users";
+        axios.get(direccion).then((result) => {
+        this.usuarios = result.data;
+        });
+        
+        
     },
     methods:{
         obtenerUsuarios(){
        // alert('estoy en el metodo');
-        axios.get('http://127.0.0.1:8000/api/user').then((respuesta)=>{
+        axios.get('http://127.0.0.1:8000/api/users').then((respuesta)=>{
             console.log(respuesta.data);
             this.usuarios=respuesta.data
         }).catch((error)=>{
@@ -99,17 +104,37 @@ export default {
         unuevo(){
                 this.$router.push('/unuevo');
             },
-        actualizarusuario(){
-            this.$router.push('/actualizarusuarios');
+        actualizar(id){
+            this.$router.push('/actualizarusuarios/'+ id);
+             
         }
     },
+    
 }
 </script>
 
 <style  scoped>
+  
+   body{
+        margin: 0%;
+    }
+    .pantalla{
+        display: flex;
+        overflow:hidden;
+    }
+    .cara1{
+        height: 100vh;
+        width: 20%;
+        
+    }
+    .cara2{
+        width: 95%;
+        height: 100vh;
+        overflow:auto;
+    }
     .izquierda{
         text-align: left;
-        width: 40%;
+        width: 80%;
     }
    
 </style>

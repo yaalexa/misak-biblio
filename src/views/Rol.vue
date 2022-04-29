@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <Header />
-            esto es rol.vue
-            <div class="container  izquierda">
-                <div class="col text-center">
-                    <h1> ROLES </h1>
-                 </div>
+     <div class="pantalla">
+        <div class="cara1">
+            <header>
+                <Header/>
+            </header>
+        </div>
+
+    <div class="cara2">
+            <section>       
+                 
                  <form action="" class="form-horizontal">
                      <div class="form-group row">
                         <label for="" > Email </label>
@@ -68,10 +71,11 @@
                </form>
 
 
-            </div>
+           
         <!-- <Footer /> -->
-
+</section>
     </div>
+     </div>
 </template>
 <script>
 import Header from '@/components/Header.vue'

@@ -8,24 +8,22 @@
             <div class="cara2">
             <section>  
               <div class="container  izquierda">
-               <h1>EDITAR MATERIAL</h1>  
+               <h1>EDITAR TIPO MATERIAL</h1>  
             
                 <form action="" class="form-horizontal">
-                   <div class="col"></div>
+                   <div class="col">
                     <div class="form-group left">
                        <div class="col-sm-10">
                          <label for="" class="control-label col-sm-3">Nombre</label>
                           <input type="text" class="form-control" name="name" id="name" v-model="form.name">
                        </div>
                     </div>
-                  
-                   <br> 
+                 
                  
                       <button type="button" class="btn btn-primary" v-on:click="editar()" >Editar</button>
-                      
                      
-                     <a type="button" @click="salir()" class="btn btn-danger"><font-awesome-icon icon="fa-solid fa-trash-can" />Salir</a>
-                     
+                      <button type="button" class="btn btn-dark margen" v-on:click="salir()"  >Salir</button>
+                     </div>
                  
                 </form>
                 </div>
@@ -40,7 +38,7 @@ import Header from '@/components/Header.vue';
 //import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 export default {
-  name:"Editar",
+  name:"EditarTipoMaterial",
   components:{
     Header,
     //Footer
@@ -55,33 +53,32 @@ export default {
   },
   methods:{
       editar(){
-          axios.put(`http://localhost:8000/api/editorials/${this.form.editorialid}`,this.form)
+          axios.put(`http://localhost:8000/api/type_materials/${this.form.TipoMaterialid}`,this.form)
           .then(response=>{
               console.log(response);
-              this.$router.push("/Editorial");
+              this.$router.push("/TipoMaterial");
           })
       },
       salir(){
-        this.$router.push("/Editorial");
+        this.$router.push("/TipoMaterial");
       },
       eliminar(){
         var enviar = {
-            "editorialid" : this.form.editorialid,
+            "TipoMaterialid" : this.form.TipoMaterialid,
           
         };
-        axios.delete("http://localhost:8000/api/editorials", { headers : enviar})
+        axios.delete("http://localhost:8000/api/type_materials", { headers : enviar})
         .then( datos => {
             console.log(datos);
-           this.$router.push("/Editorial");
+           this.$router.push("/TipoMaterial");
         });
 
       }
   },
   mounted:function(){
-      this.form.editorialid= this.$route.params.id;
-      axios.get("http://localhost:8000/api/editorials/?id="+ this.form.editorialid)
+      this.form.TipoMaterialid = this.$route.params.id;
+      axios.get("http://localhost:8000/api/type_materials/?id="+ this.form.TipoMaterialid)
       .then( datos => {
-        
         this.form.name = datos.data[0].name;
         console.log(this.form);
 

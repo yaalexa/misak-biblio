@@ -1,13 +1,15 @@
 <template>
-    <div>
-        <Header />
-            este es mostrar.vue muestra los roles
-            <br>
-            <!-- <CrearRol /> -->
-            <div class="container  izquierda">
-                <div class="col text-left">
+    <div class="pantalla">
+        <div class="cara1">
+            <header>
+                <Header/>
+            </header>
+        </div>
+
+    <div class="cara2">
+            <section>
                     <h1> Roles </h1>
-                 </div>
+                 
                  <form  class="form-horizontal">
                      <div class="form-group row">
                         <label for="" class="control-label"> Nuevo rol </label>
@@ -63,19 +65,20 @@
                                 
                             </table>
                         </div>                          
-                    </div>
-            </div>
+                    </div>   
+            
         <!-- <Footer /> -->
-
+</section>
+    </div>  
     </div>
 </template>
-<script setup>
+<script scope>
 import Header from '@/components/Header.vue'
 import CrearRol from '@/views/Rol/CrearRol.vue'
 //import Footer from '@/components/Footer.vue'
 import axios from 'axios';
 export default {
-    name:"mostrar",
+    name:"MostrarRol",
     
     
     data:function(){
@@ -91,8 +94,8 @@ export default {
     },
     
     components:{
-        Header,
-        CrearRol,
+          Header,
+          CrearRol,
         //Footer
     },
     mounted(){
@@ -166,4 +169,20 @@ export default {
     text-align: left;
     width: 50%;
 }
+  
+   body{
+        margin: 0%;
+    }
+    .pantalla{
+        display: flex;
+    }
+    .cara1{
+        height: 100vh;
+        width: 20%;
+        
+    }
+    .cara2{
+        width: 80%;
+        height: 100vh;
+    }
 </style>
