@@ -27,6 +27,8 @@ import Bar from '@/components/charts/Bar.vue';
 import LineChartGenerator from '@/components/charts/Line.vue';
 import Doughnut from '@/components/charts/Doughnut.vue';
 
+import Casa from '../views/home/Casa.vue';
+
 
 Vue.use(VueRouter)
 
@@ -130,6 +132,11 @@ const routes = [
   name:'Doughnut',
   path: '/Doughnut',
   component: Doughnut
+},
+{
+  name:'Casa',
+  path:'/Casa',
+  component: Casa
 }
 ]
 
